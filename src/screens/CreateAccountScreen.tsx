@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  Alert,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import InputComponent from '../components/InputComponent';
 import CraeteAccountButton from '../components/CreateAccountButton';
 
@@ -53,7 +46,7 @@ const CreateAccountScreen = ({navigation}) => {
       return;
     } else {
       console.log('Submitted:', name, email, passward);
-      navigation.navigate('HomePage');
+      navigation.navigate('Tab');
     }
   };
 
