@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignUpScreen from '../screens/SignUpScreen';
 import CreateAccountScreen from '../screens/CreateAccountScreen';
-import HomePageScreen from '../screens/HomePageScreen';
+import TabNavigation from './TabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,8 +40,8 @@ const Navigation = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="HomePage"
-          component={HomePageScreen}
+          name="Tab"
+          component={TabNavigation}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
