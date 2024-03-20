@@ -82,7 +82,8 @@ const ProductScreen = () => {
           <FlatList
             data={data}
             renderItem={renderItem}
-            keyExtractor={item => item.id}></FlatList>
+            keyExtractor={item => item.id}
+            showsVerticalScrollIndicator={false}></FlatList>
         )}
       </View>
     </View>
