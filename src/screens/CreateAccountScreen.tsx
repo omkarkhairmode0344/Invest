@@ -7,9 +7,7 @@ const CreateAccountScreen = ({navigation}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [passward, setPassward] = useState('');
-  const [errorName, setErrorName] = useState(false);
-  const [errorEmail, setErrorEmail] = useState(false);
-  const [errorPassward, setErrorPassward] = useState(false);
+  const [error, setError] = useState(false);
 
   const onChangeName = newName => {
     setName(newName);
@@ -25,21 +23,21 @@ const CreateAccountScreen = ({navigation}) => {
 
   const onCreateAccountPressed = () => {
     if (!name) {
-      setErrorName(true);
+      setError(true);
     } else {
-      setErrorName(false);
+      setError(false);
     }
 
     if (!email) {
-      setErrorEmail(true);
+      setError(true);
     } else {
-      setErrorEmail(false);
+      setError(false);
     }
 
     if (!passward) {
-      setErrorPassward(true);
+      setError(true);
     } else {
-      setErrorPassward(false);
+      setError(false);
     }
 
     if (!name || !email || !passward) {
@@ -69,23 +67,26 @@ const CreateAccountScreen = ({navigation}) => {
       <InputComponent
         placeholder="Full name"
         value={name}
-        onChangeText={onChangeName}></InputComponent>
-      {errorName ? (
+        onChangeText={onChangeName}
+        error={error}></InputComponent>
+      {error ? (
         <Text style={styles.errortext}>Enter Valid Name</Text>
       ) : null}
       <InputComponent
         placeholder="Email address"
         value={email}
-        onChangeText={onChangeEmail}></InputComponent>
-      {errorEmail ? (
+        onChangeText={onChangeEmail}
+        error={error}></InputComponent>
+      {error ? (
         <Text style={styles.errortext}>Enter Valid Email</Text>
       ) : null}
       <InputComponent
         placeholder="Passward"
         secureTextEntry={true}
         value={passward}
-        onChangeText={onChangePassward}></InputComponent>
-      {errorPassward ? (
+        onChangeText={onChangePassward}
+        error={error}></InputComponent>
+      {error ? (
         <Text style={styles.errortext}>Enter Valid Passward</Text>
       ) : null}
       <CraeteAccountButton
